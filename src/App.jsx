@@ -1,54 +1,40 @@
 import React from "react";
 
 const navItems = [
-  ["Work", "#work"],
-  ["Services", "#services"],
-  ["About", "#about"],
+  ["Capabilities", "#capabilities"],
+  ["Process", "#process"],
+  ["Background", "#background"],
   ["Contact", "#contact"],
 ];
 
-const projects = [
+const capabilities = [
   {
-    name: "SecPriva",
-    type: "Secure ephemeral video infrastructure",
-    status: "In progress",
+    title: "Workflow systems",
     description:
-      "Privacy-first video workflow for sensitive sessions, risk reduction, and controlled access. Built around low-retention architecture, identity gates, and operational safeguards.",
-    details: ["Product architecture", "Workflow design", "Next.js / Supabase / Daily.co"],
+      "I turn scattered manual processes into visible steps, review points, handoff files, and small tools people can actually operate.",
   },
   {
-    name: "SecPriva Lead Console",
-    type: "Internal operations console",
-    status: "Demo-safe artifact",
+    title: "Internal tools",
     description:
-      "Reviewable lead and outreach workspace designed for structured intake, prioritization, notes, and follow-up handling without turning the workflow into a spreadsheet maze.",
-    details: ["Dashboard UX", "Data review", "Operational workflow"],
+      "I build lightweight dashboards, review queues, local APIs, and operator consoles for research, operations, and decision support.",
   },
   {
-    name: "Gravemark",
-    type: "Weighted evidence workflow engine",
-    status: "Active prototype",
+    title: "AI-assisted operations",
     description:
-      "Local research workflow for turning sources into findings, scoring evidence weight, reviewing results, and exporting usable reports.",
-    details: ["Research runs", "Evidence review", "Source-to-report pipeline"],
+      "I use AI where it helps with extraction, drafting, review, and repeatable work — with human approval where claims or decisions matter.",
   },
   {
-    name: "AI Automation Deliverable Pack",
-    type: "Demo workflow package",
-    status: "Portfolio proof",
+    title: "Documentation and handoff",
     description:
-      "Packaged automation deliverable showing intake, extraction, review tables, and client-safe handoff materials for repeatable AI-assisted work.",
-    details: ["n8n-style workflow", "Documentation", "Client handoff"],
+      "I package workflows into runbooks, field manuals, scripts, checklists, and demo-safe artifacts so the work survives beyond the build session.",
   },
 ];
 
-const services = [
-  "Workflow audits and rebuilds",
-  "Internal dashboards and review tools",
-  "AI-assisted research systems",
-  "Local-first automation planning",
-  "Technical documentation and handoff packages",
-  "Privacy-focused product architecture",
+const processSteps = [
+  ["01", "Map the workflow", "Find the real intake, decision points, failure points, and output requirements."],
+  ["02", "Define the controls", "Add review states, approval boundaries, claim checks, and clear ownership where needed."],
+  ["03", "Build the smallest usable system", "Create the tool, dashboard, script, or workflow that proves the operating loop."],
+  ["04", "Package the handoff", "Deliver the files, docs, commands, and instructions needed to keep using it."],
 ];
 
 const contactLinks = [
@@ -88,61 +74,57 @@ export default function App() {
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <p className="hero-label">AI workflow systems · internal tools · reviewable automation</p>
-        <h1 id="hero-title">Justin Strange</h1>
+        <p className="hero-label">Independent systems architect · AI workflow builder · SecPriva</p>
+        <h1 id="hero-title">I build practical systems for work that needs structure.</h1>
         <p className="hero-copy">
-          I build practical systems for research, operations, local APIs, dashboards, and evidence-backed workflows.
+          This page exists so people I contact can verify who I am, what I build, and how to reach me. I work on internal tools, workflow automation, local-first systems, and reviewable AI-assisted processes.
         </p>
         <div className="hero-actions" aria-label="Primary links">
-          <a href="#work">View work</a>
-          <a href="mailto:justin@secpriva.com">Email</a>
+          <a href="mailto:justin@secpriva.com">Email me</a>
+          <a href="https://www.linkedin.com/in/justinstrange/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/SaltProphet" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </section>
 
-      <Section id="work" eyebrow="Work" title="Selected systems">
-        <div className="project-grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.name}>
-              <div className="project-meta">
-                <span>{project.type}</span>
-                <span>{project.status}</span>
-              </div>
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <ul>
-                {project.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
-                ))}
-              </ul>
+      <Section id="capabilities" eyebrow="Capabilities" title="What I can help with">
+        <div className="capability-list">
+          {capabilities.map((item) => (
+            <article className="capability-item" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </article>
           ))}
         </div>
       </Section>
 
-      <Section id="services" eyebrow="Services" title="What I build">
-        <div className="service-grid">
-          {services.map((service) => (
-            <div className="service-item" key={service}>
-              {service}
-            </div>
+      <Section id="process" eyebrow="Process" title="How I approach the work">
+        <div className="process-list">
+          {processSteps.map(([number, title, description]) => (
+            <article className="process-item" key={number}>
+              <span>{number}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            </article>
           ))}
         </div>
       </Section>
 
-      <Section id="about" eyebrow="About" title="Small systems, clean handoffs.">
+      <Section id="background" eyebrow="Background" title="Builder, not agency theater.">
         <div className="about-copy">
           <p>
-            I work on AI-assisted workflows, privacy-focused infrastructure, local tooling, and operational systems that need to be understandable after the first demo.
+            I am a solo systems architect and tool-builder focused on practical workflows: research pipelines, review systems, operator dashboards, local APIs, automation handoffs, and privacy-aware product architecture.
           </p>
           <p>
-            The common pattern is simple: take a messy process, define the intake, make the review path visible, reduce manual rework, and package the output so someone else can use it without decoding the builder's brain.
+            My current work is centered around SecPriva and adjacent internal tooling. Public project writeups are being organized separately so this page stays clean, accurate, and easy to maintain.
           </p>
         </div>
       </Section>
 
-      <Section id="contact" eyebrow="Contact" title="Send the broken workflow.">
+      <Section id="contact" eyebrow="Contact" title="Contact">
         <p className="contact-copy">
-          I’ll turn it into a usable process, tool, dashboard, runbook, or review system.
+          Best path is email. LinkedIn and GitHub are included for identity/context checks.
         </p>
         <div className="contact-links">
           {contactLinks.map(([label, href]) => (
@@ -151,7 +133,7 @@ export default function App() {
             </a>
           ))}
         </div>
-        <p className="contact-note">Calendar booking link can be added when the scheduling account is ready.</p>
+        <p className="contact-note">Calendar booking link can be added after the scheduling account is ready.</p>
       </Section>
 
       <footer className="site-footer">
