@@ -23,6 +23,8 @@ export default function App() {
           <a href="#lab">LAB</a>
           <a href="#notes">NOTES</a>
           <a href="#contact">CONTACT</a>
+          <a href="https://github.com/SaltProphet" target="_blank" rel="noreferrer">GITHUB ↗</a>
+          <a href="https://www.linkedin.com/in/justinstrange/" target="_blank" rel="noreferrer">LINKEDIN ↗</a>
         </nav>
       </header>
 
