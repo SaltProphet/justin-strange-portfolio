@@ -1,0 +1,58 @@
+[
+  {
+    "id": "range-free-ai",
+    "slug": "range-free-ai",
+    "title": "RANGE-FREE AI™",
+    "subtitle": "Born at localhost. Dies at localhost.",
+    "description": "There is no outside.",
+    "type": "artifact",
+    "image": null,
+    "date": "2026-10-04",
+    "featured": true,
+    "tags": ["local", "ai"],
+    "merchAvailable": false,
+    "purchaseUrl": ""
+  },
+  {
+    "id": "automate-the-bullshit",
+    "slug": "automate-the-bullshit",
+    "title": "AUTOMATE THE BULLSHIT",
+    "subtitle": "",
+    "description": "",
+    "type": "artifact",
+    "image": null,
+    "date": "2026-10-04",
+    "featured": false,
+    "tags": ["automation"],
+    "merchAvailable": false,
+    "purchaseUrl": ""
+  },
+  {
+    "id": "shrug",
+    "slug": "shrug",
+    "title": "¯\\_(ツ)_/¯",
+    "subtitle": "",
+    "description": "",
+    "type": "artifact",
+    "image": null,
+    "date": "2026-10-04",
+    "featured": false,
+    "tags": ["unknown"],
+    "merchAvailable": false,
+    "purchaseUrl": ""
+  },
+  {
+    "id": "ai-governance-diagram",
+    "slug": "ai-governance-diagram",
+    "title": "AI GOVERNANCE DIAGRAM",
+    "subtitle": "",
+    "description": "An AI-generated diagram illustrating my disdain for AI-generated diagrams.",
+    "type": "diagram",
+    "image": null,
+    "date": "2026-10-04",
+    "featured": false,
+    "tags": ["governance", "diagram"],
+    "merchAvailable": false,
+    "purchaseUrl": ""
+  }
+]

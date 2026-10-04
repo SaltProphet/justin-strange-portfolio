@@ -22,6 +22,17 @@ Project additions and updates belong in:
 - `content/**`
 - `public/projects/<slug>/**`
 
+Isolated top-level sections have narrower boundaries. Shop of Horrors content and
+assets belong in `content/shop-of-horrors/**` and `public/shop-of-horrors/**`.
+The scope validator accepts those boundaries only when invoked with
+`--slug shop-of-horrors`; it does not grant access to `src/**` or unrelated
+`public/**` paths.
+
+The homepage page boundary is `src/pages/Home/**` and remains presentation
+protected after this architecture refactor. New Shop of Horrors artifacts do
+not require changes to `src/App.jsx`, global CSS, routing, shared navigation, or
+validation configuration.
+
 Use the existing content schema and presentation. Do not create custom project layouts.
 
 ## Scope expansion

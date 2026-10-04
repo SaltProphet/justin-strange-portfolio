@@ -20,7 +20,16 @@ const tracked = execFileSync('git', ['diff', '--name-only', '--diff-filter=ACMRT
 const untracked = execFileSync('git', ['ls-files', '--others', '--exclude-standard'], { encoding: 'utf8' })
   .split(/\r?\n/).filter(Boolean)
 const changed = [...new Set([...tracked, ...untracked])]
-const allowed = (file) => file.startsWith('content/') || (slug && file.startsWith(`public/projects/${slug}/`))
+const allowed = (file) => {
+  if (!slug) return file.startsWith('content/')
+  const boundaries = [
+    `content/${slug}/`,
+    `public/${slug}/`,
+    `content/projects/${slug}.json`,
+    `public/projects/${slug}/`,
+  ]
+  return boundaries.some((boundary) => file === boundary || file.startsWith(boundary))
+}
 const violations = changed.filter((file) => !allowed(file))
 
 if (violations.length) {
@@ -30,9 +39,9 @@ if (violations.length) {
 }
 
 if (slug) {
-  const projectPath = `content/projects/${slug}.json`
-  if (!existsSync(projectPath) && !changed.includes(projectPath)) {
-    console.error(`Expected project content file was not found: ${projectPath}`)
+  const contentPaths = [`content/${slug}`, `content/projects/${slug}.json`]
+  if (!contentPaths.some((path) => existsSync(path) || changed.some((file) => file === path || file.startsWith(`${path}/`)))) {
+    console.error(`Expected content boundary was not found for slug: ${slug}`)
     process.exit(1)
   }
 }
