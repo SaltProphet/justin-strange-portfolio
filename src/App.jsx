@@ -1,4 +1,5 @@
 import './App.css'
+import { Analytics } from '@vercel/analytics/react'
 
 const work = [
   { number: '01', title: 'SecPriva', meta: 'PRIVATE INFRASTRUCTURE / ACTIVE' },
@@ -91,6 +92,7 @@ export default function App() {
         <span>JUSTIN STRANGE</span>
         <span>MORE TO COME.</span>
       </footer>
+      <Analytics />
     </main>
   )
 }
