@@ -1,18 +1,7 @@
 import './App.css'
 import { Analytics } from '@vercel/analytics/react'
-
-const work = [
-  { number: '01', title: 'SecPriva', meta: 'PRIVATE INFRASTRUCTURE / ACTIVE' },
-  { number: '02', title: 'Aether', meta: 'OPERATIONAL TOOLING / ACTIVE' },
-  { number: '03', title: 'Gravemark', meta: 'RESEARCH CONSOLE / ARCHIVE' },
-  { number: '04', title: 'System//Zero', meta: 'SYSTEMS IP / PRIVATE' },
-  { number: '05', title: 'ST-OBD', meta: 'VEHICLE TELEMETRY / BUILDING' },
-]
-
-const lab = [
-  { number: 'L-01', title: 'Things I built because I was too curious about the problem to leave it alone.' },
-  { number: 'L-02', title: 'More entries coming once there is time and money to make them.' },
-]
+import work from '../content/projects/index.js'
+import lab from '../content/lab.json'
 
 export default function App() {
   return (
